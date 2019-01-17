@@ -1,0 +1,558 @@
+/**********************************************
+*** GENERAL
+**********************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 2%;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.notebook {
+    background: #fff;
+    margin: 2%;
+    border-radius: 25px;
+    padding: 20px; 
+}
+
+body {
+    background: #ccebff;
+    position: relative;
+    color: #444;
+    font-family: "Ubuntu";
+}
+
+.jumbotron {
+    position: relative;
+    padding: 10px !important;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 0 !important;
+    background: #fff;
+
+}
+
+.jumbotron h1 {
+    text-decoration-line: underline;
+}
+
+.jumbotron p {
+    color: #555;
+}
+
+.star_checked {
+    color: #3399ff;
+    display: inline;
+}
+
+.fa fa-star {
+    display: inline;
+}
+
+/**********************************************
+*** navigation
+**********************************************/
+
+/* This hides all pages */
+.page {
+    display: none;
+}
+
+/* This displays the first page */
+.default-page {
+    display: block;
+}
+
+/* This displays the page corresponding to the one you clicked on */
+.page:target {
+    display: block;
+    padding-top: 2%;
+}
+
+/* This hides the default page when another page is clicked */
+.page:target ~ .default-page {
+    display: none;
+}
+
+/**********************************************
+*** Top cover
+**********************************************
+#top-cover {
+    background-image: url(http://www.trendycovers.com/covers/1322932923.jpg);
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: cover;
+}
+*/
+
+.notebook-line-container {
+    background: #fff;
+}
+
+.notebook-line {
+    height: 3px;
+    background: #444;
+    border-radius: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+/**********************************************
+*** Navbar
+**********************************************/
+.navbar {
+    background-color: white !important;
+    /*alt "Lucida Sans Unicode", "Lucida Grande", sans-serif */
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 0 !important;
+    padding: 0 5% !important;
+
+}
+
+.navbar-nav a {
+    color: black !important;
+}
+
+.navbar-nav a:hover {
+    color: white !important;
+    background-color: #444;
+}
+
+.navbar-nav a:active {
+    color: #ccebff !important;
+    background-color: #444;
+}
+.nav-item-main {
+    width: 150% !important;
+}
+
+
+/*--- Navbar search ---*/
+.search {
+    margin-right: 6%;
+    position: relative;
+    width: 190px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('https://www.freeiconspng.com/uploads/search-icon-png-22.png');
+    background-position: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    padding: 5px 10px 5px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    float: right;
+}
+
+.search:focus {
+    width: 90%;
+}
+
+.navbar-toggler-icon{
+    color: #000;
+}
+
+.navbar-toggle.navbar-left {
+    margin-left: 10px;
+}
+
+/**********************************************
+*** Datepicker and ADD moment button
+**********************************************/
+.date-and-add-bar {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#datepicker p {
+    /*alt "Lucida Sans Unicode", "Lucida Grande", sans-serif */
+    padding-top: 7px;
+    padding-right: 10px;
+    font-weight:  bold;
+}
+
+.form-group {
+    float: right;
+}
+
+@media (max-width:768px){
+    .form-group {
+        float:left;
+        margin-bottom: 0 !important;
+    }
+    
+    .space {
+        display: none;
+    }
+    
+    .btn-moment-col{
+        position: relative;
+        top: 0 !important;
+        margin-bottom: 1rem;
+        float: none !important;
+        text-align: center !important;
+    }
+}
+
+.btn-moment-col {
+    float: left !important;
+    text-align: left;
+}
+
+.form-control{
+    position: absolute;
+    margin-top: 5px;
+    max-width: 140px !important;
+    min-width: 110px !important;
+    height: 30px;
+}
+
+#btn_main_add_moment {
+    /*alt "Lucida Sans Unicode", "Lucida Grande", sans-serif */
+    margin-top: 5px;
+
+}
+
+#datepicker {
+    position: inherit;
+    margin: auto;
+}
+
+.fa-calendar-o {
+    font-size: 25px;
+    margin-top: 0;
+    padding-top: 7px;
+    padding-left: 7px;
+    color: #222;
+}
+
+
+/**********************************************
+*** Modal area
+**********************************************/
+
+#modalDate {
+    padding-left: 50px;
+    padding-top: 10px;
+
+}
+
+.add__description, .add__tags {
+    width: 100%;
+    line-height: 200%;
+}
+
+.input-type-design {
+    border-color: #777;
+    border-radius: 25px;
+    padding-left: 10px;    
+}
+
+.input-type-design:focus {
+    border: 3px solid #ccebff !important;
+    outline: none;
+    box-shadow: 1px 1px 10px #719ECE;
+}
+
+.rate-text {
+    width: 10%;
+    float: left;
+    font-weight: bold;
+}
+
+/* Stars rating */
+
+.stars-rating {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.stars-rating input {
+    display: none;
+}
+
+.stars-rating label {
+    display: block;
+    cursor: pointer;
+    width: 25px;
+}
+
+/* content: '\f118'; */
+.stars-rating label:before {
+    content: "\f005";
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 25px;
+    color: #101010;
+}
+
+.stars-rating label:after {
+    content: "\f005";
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 25px;
+    color: #3399ff;
+    opacity: 0;
+    top: 0;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.stars-rating label:hover:after,
+.stars-rating label:hover ~ label:after,
+.stars-rating input:checked ~ label:after {
+    opacity: 1;
+}
+
+/**********************************************
+*** Timeline area
+**********************************************/
+
+.item {
+    padding: 13px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.item:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+
+.item:nth-child(even) {
+    background-color: #f6f6f6;
+        /*#eef9ff;*/
+}
+
+.date__text {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.item__edit__btn {
+    padding-right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+    float: left;
+}
+
+.item__edit__btn:focus {
+    outline: none;
+}
+
+.item__edit__btn:active {
+    transform: translateY(2px);
+}
+
+.item:hover .item__edit__btn {
+    display: block;
+    color: #3399ff;
+}
+
+.item:hover .date__text {
+    transform: translateX(20px);
+}
+
+.active,
+.date__item:hover {
+    font-weight: bold
+    
+}
+
+/**********************************************
+*** Moments area
+**********************************************/
+
+.moment__text {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.item__delete__btn {
+    padding-left: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+    float: right;
+}
+
+.item__delete__btn:focus {
+    outline: none;
+}
+
+.item__delete__btn:active {
+    transform: translateY(2px);
+}
+
+.item:hover .item__delete__btn {
+    display: block;
+    color: #d9534f;
+}
+
+.item:hover .moment__text {
+    transform: translateX(20px);
+}
+
+.item:hover .tags__text {
+    display: inline;
+}
+
+.tags__text {
+    font-size: 10px;
+    padding-left: 20px;
+    display: none;
+}
+
+.item:hover .stars-rating-display {
+    display: block;
+    font-size: 10px;
+    line-height: 0;
+    text-align: center;
+}
+
+.stars-rating-display {
+    display: none;
+}
+
+.msg_no_rating {
+    line-height: 0;
+}
+
+.title {  
+    text-align: center;
+    padding-top: 2%;
+}
+
+/**********************************************
+*** statistics area
+**********************************************/
+.tab-container {
+    min-height: 300px;
+}
+
+.stats-param {
+    cursor: pointer;
+    color: #444;
+    font-weight: bold;
+}
+
+/**********************************************
+*** statistics area
+**********************************************/
+
+.statistics-container .stats-nav {
+    text-align: center;
+}
+
+.statistics-container .nav-item {
+    display: inline-block;
+}
+
+.chart-container {
+    max-width: 80% !important;
+    display: none;
+    position: relative;
+    margin: 5% 10% 5% 10%;
+    height: 70%;
+}
+
+.stats-show {
+    width: 50px;
+}
+
+.stats-control {
+    text-align: center;
+    display: block;
+    line-height: 30px;
+}
+
+.stats-radio-btn {
+    padding: 2px 5px;
+    
+}
+
+.stats-radio-container p{
+    display: inline;
+    padding: 2px 5px;
+}
+
+.active-title {
+    background: #444;
+    color: white !important;
+    border: none;
+    outline: none;
+    padding: 8px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.stats-nav .nav-item a:hover {
+    text-decoration-line: underline;
+}
+/**********************************************
+*** about area
+**********************************************/
+
+.about-text {
+    padding: 0 10%;
+    text-align: justify;
+}
+
+
+/**********************************************
+*** log-in area
+**********************************************/
+
+.btn-log-in {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    top: 50%;
+    margin: 50px 0;
+}
+
+
+/**********************************************
+*** log-in area
+**********************************************/
+.footer {
+    font-size: 12px;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>M O M E N T U M</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon2-32.png"
+</head>
+
+<body>
+    <div class="notebook">
+        <div class="jumbotron text-center" id="top-cover">
+            <h1>M O M E N T U M</h1>
+            <p>From various moments put together you understand your momentum better</p>
+        </div>
+        <div class="main-window log-in text-center" id="log-in">
+
+            <button class="btn btn-dark btn-log-in" id="check">Login</button>
+
+        </div>
+
+        <div class="main-window site-content" id="site-content">
+            <div class="notebook-line-container">
+                <div class="notebook-line">
+                </div>
+            </div>
+            <div class="navbar-padding">
+            </div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                <button class="pull-left navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav-item-main">
+                            <a class="nav-link active" href="#timeline" id="timeline-tab">TIMELINE</a>
+                        </li>
+                        <li class="nav-item nav-item-main">
+                            <a class="nav-link" href="#statistics" id="statistics-tab">STATISTICS</a>
+                        </li>
+                        <li class="nav-item nav-item-main">
+                            <a class="nav-link" href="#about" id="about-tab">ABOUT</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-container navbar-right">
+                    <form action="/action_page.php">
+                        <input class="search" type="text" placeholder="Search diary.." name="search">
+                    </form>
+                </div>
+            </nav>
+            <div class="navbar-padding">
+            </div>
+            <div class="notebook-line">
+            </div>
+            <div class="tab-container statistics-container page" id="statistics">
+                <h2 class="title">STATISTICS</h2>
+                <hr style="color: #444">
+                <div class="tab-content">
+                    <div class="stats-param">
+                        <ul class="stats-nav" id="stats-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active-title" id="label_word-counter" name="word-counter_0">Word Counter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="label_word-likes" name="word-likes_1">Word Rating</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="label_date-likes" name="date-likes_2">Date Rating</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="stats-control">
+                        <div class="">
+                            Number of elements to show:
+                            <input type="number" class="stats-show input-type-design" id="stats-limit" min="1" max="20" value="10">
+                        </div>
+
+                        <div class="stats-radio-container">
+                            <p>Sort by:</p>
+                            <input type="radio" class="stats-radio-btn" name="up-down" id="radio-up" value="up" checked="true">
+                            <p>Max</p>
+                            <input type="radio" class="stats-radio-btn" name="up-down" value="down">
+                            <p>Min</p>
+                        </div>
+                        <button type="button" class="btn btn-dark btn-sm" id="btn_stats_control">APPLY</button>
+
+                    </div>
+                    <div class="word-counter chart-container" id="word-counter">
+                        <canvas id="word-counter-chart"></canvas>
+                    </div>
+                    <div class="word-likes chart-container" id="word-likes">
+                        <canvas id="word-likes-chart"></canvas>
+                    </div>
+                    <div class="date-likes chart-container" id="date-likes">
+                        <canvas id="date-likes-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-container page" id="about">
+                <h2 class="title">ABOUT</h2>
+                <div class="container">
+                    <div class="tab-content">
+                        <div class="about-text">
+                            <p>Looking back on the day/month or year you had in a way that dynamically demonstrates what you experienced through a certain period. From various moments put together you understand your momentum better.
+                                Momentum lets you write down all the important things that are happening to you, all the life changing moments, all the moments you want to track, all the moments that made you feel good, and all the moment you regret.
+                                Later, Momentum will show you statistical analysis of all your moments, analyzed by word / moments / dates / good-vibes levels and more.</p>
+                            <p>More features will come soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-container page default-page" id="timeline">
+                <div class="date-and-add-bar">
+                    <div class="row">
+                        <!-- Date picker HTML code-->
+                        <div class='col-12 col-sm-7 date-col'>
+                            <form>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datepicker'>
+                                        <p>PICK A DATE: </p>
+                                        <input type='text' class="form-control" id="date-textbox" />
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar-o"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End of date picker code -->
+                        <div class='col-0 col-sm-1 space'>
+                        </div>
+                        <!-- Modal code-->
+                        <div class="col-12 col-sm-3 col-md-4 btn-moment-col">
+                            <button type="button" class="btn btn-dark btn-sm" id="btn_main_add_moment" data-toggle="modal" data-target="#myModal">ADD A MOMENT</button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add a moment</h4>
+                                            <h6 id="modalDate"></h6>
+                                            <button type="button" class="close" id="btn-close-modal" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <input type="text" class="add__description input-type-design" id="add__description" placeholder="Add description" autofocus> <br><br>
+                                            <input type="text" class="add__tags input-type-design" placeholder="Add tags (optional)"> <br><br>
+                                            <!-- Star rating -->
+                                            <p class="rate-text">Rate: </p>
+                                            <br>
+                                            <div class="stars-rating">
+                                                <input type="radio" name="star" id="star-5" value=5><label for="star-5"></label>
+                                                <input type="radio" name="star" id="star-4" value=4><label for="star-4"></label>
+                                                <input type="radio" name="star" id="star-3" value=3><label for="star-3"></label>
+                                                <input type="radio" name="star" id="star-2" value=2><label for="star-2"></label>
+                                                <input type="radio" name="star" id="star-1" value=1><label for="star-1"></label>
+                                            </div>
+                                        </div>
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark btn-modal" id='btn_add_modal' data-dismiss="modal">Add</button>
+                                            <button type="button" class="btn btn-dark btn-modal" id='btn_save_modal' data-dismiss="modal">Save</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of modal code -->
+                    </div>
+                </div>
+
+                <div class="container timeline-and-moments">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 timeline">
+                            <h2 class="title">TIMELINE</h2>
+                            <div class="timeline__list">
+                                <!-- Date entry example body --
+                    <div class="item clearfix date__item" id="timeline-0">
+                        <span class="item__edit__btn">
+                            <i class="ion ion-edit"></i>
+                        </span>
+                        <div class="date__text">26 December, 2018</div> 
+                    </div>
+                    <-- Date entry example body -->
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-8 col-sm-6 moments">
+                            <h2 class="title">MOMENTS</h2>
+                            <div class="moments__list">
+                                <!-- Date entry example body --
+                        <div class="moment__item item clearfix" id="moment-0">
+                            <span class="item__edit__btn">
+                                <i class="ion ion-edit"></i>
+                            </span>
+                            <div class="moment__text">Took a hair cut
+                                <div class="tags__text">#tags #boo</div>
+                            </div>
+                            <span class="item__delete__btn">
+                                <i class="ion ion-close"></i>
+                            </span>
+                            <div class="stars-rating-display">
+                                <span class="fa fa-star star_checked"></span>
+                                <span class="fa fa-star star_checked"></span>
+                                <span class="fa fa-star star_checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                        <-- Date entry example body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron text-center footer" style="margin-bottom:0">
+            <p>Momentum © Created by Omer Stein</p>
+        </div>
+        <script src="app.js"></script>
+    </div>
+</body>
+
+</html>
